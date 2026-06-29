@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NMGrassVB - Albuquerque Grass Volleyball Tournaments</title>
+<style>
+  :root {
+    --teal: #14ffec;
+    --teal-dim: #0d9c91;
+    --black: #0a0e0d;
+    --black-soft: #121817;
+    --card-bg: #151c1b;
+    --white: #f3fbfa;
+    --gray-text: #8aa3a0;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: var(--black);
+    color: var(--white);
+    line-height: 1.5;
+  }
+
+  /* ---------- HERO ---------- */
+  .hero {
+    background:
+      radial-gradient(circle at 50% 0%, rgba(20,255,236,0.12) 0%, transparent 60%),
+      var(--black);
+    color: var(--white);
+    text-align: center;
+    padding: 64px 20px 52px;
+    border-bottom: 1px solid rgba(20,255,236,0.2);
+  }
+
+  .hero h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    letter-spacing: -1.5px;
+    color: var(--teal);
+    text-shadow: 0 0 24px rgba(20,255,236,0.35);
+  }
+
+  .hero h2 {
+    font-size: 1.05rem;
+    font-weight: 500;
+    margin-top: 10px;
+    color: var(--gray-text);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+  }
+
+  .hero p {
+    max-width: 480px;
+    margin: 20px auto 0;
+    font-size: 0.95rem;
+    color: var(--gray-text);
+  }
+
+  .hero .handle {
+    display: inline-block;
+    margin-top: 20px;
+    background: rgba(20,255,236,0.08);
+    border: 1px solid rgba(20,255,236,0.4);
+    padding: 9px 20px;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+    color: var(--teal);
+  }
+
+  /* ---------- SECTIONS ---------- */
+  section {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 44px 20px;
+  }
+
+  .section-title {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--teal);
+    margin-bottom: 28px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  /* ---------- TOURNAMENT CARDS ---------- */
+  .tournament-card {
+    background: var(--card-bg);
+    border: 1px solid rgba(20,255,236,0.18);
+    border-radius: 18px;
+    padding: 24px;
+    margin-bottom: 22px;
+    transition: border-color 0.2s ease, transform 0.2s ease;
+  }
+
+  .tournament-card:hover {
+    border-color: rgba(20,255,236,0.5);
+    transform: translateY(-2px);
+  }
+
+  .tournament-card h3 {
+    color: var(--white);
+    font-size: 1.2rem;
+    font-weight: 800;
+    margin-bottom: 14px;
+  }
+
+  .tournament-card .detail-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 7px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    font-size: 0.92rem;
+  }
+
+  .tournament-card .detail-row:last-of-type {
+    border-bottom: none;
+  }
+
+  .tournament-card .label {
+    font-weight: 600;
+    color: var(--gray-text);
+  }
+
+  .tournament-card .value {
+    text-align: right;
+    color: var(--white);
+    font-weight: 500;
+  }
+
+  .register-btn {
+    display: block;
+    text-align: center;
+    background: var(--teal);
+    color: var(--black);
+    font-weight: 800;
+    font-size: 1rem;
+    text-decoration: none;
+    padding: 14px;
+    border-radius: 10px;
+    margin-top: 18px;
+    transition: transform 0.1s ease, box-shadow 0.2s ease;
+    box-shadow: 0 0 0 rgba(20,255,236,0);
+  }
+
+  .register-btn:hover {
+    box-shadow: 0 0 20px rgba(20,255,236,0.45);
+  }
+
+  .register-btn:active {
+    transform: scale(0.97);
+  }
+
+  .no-tournaments {
+    text-align: center;
+    color: var(--gray-text);
+    font-size: 0.95rem;
+    padding: 20px;
+  }
+
+  /* ---------- CONTACT ---------- */
+  .contact-section {
+    text-align: center;
+    background: var(--black-soft);
+    color: var(--white);
+    border-top: 1px solid rgba(20,255,236,0.2);
+  }
+
+  .contact-section p {
+    color: var(--gray-text);
+  }
+
+  .contact-section a {
+    color: var(--teal);
+    font-size: 1.4rem;
+    font-weight: 800;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 10px;
+  }
+
+  footer {
+    text-align: center;
+    padding: 22px;
+    font-size: 0.8rem;
+    color: #4a5a58;
+    background: var(--black);
+  }
+</style>
+</head>
+<body>
+
+  <!-- ---------- HERO ---------- -->
+  <div class="hero">
+    <h1>NMGrassVB</h1>
+    <h2>Albuquerque Grass Volleyball Tournaments</h2>
+    <p>Co-ed grass volleyball tournaments around Albuquerque. Sign up, show up, play hard.</p>
+    <p style="margin-top: 14px; font-size: 0.9rem;">Find us on Instagram & Facebook</p>
+    <div style="display: flex; justify-content: center; gap: 12px; margin-top: 10px;">
+      <a class="handle" href="https://instagram.com/nmgrassvb" target="_blank">IG @nmgrassvb</a>
+      <a class="handle" href="https://facebook.com/nmgrassvb" target="_blank">FB @nmgrassvb</a>
+    </div>
+  </div>
+
+  <!-- ---------- UPCOMING TOURNAMENTS ---------- -->
+  <section id="tournaments">
+    <div class="section-title">Upcoming Tournaments</div>
+    <div id="tournament-list"></div>
+  </section>
+
+  <!-- ---------- CONTACT ---------- -->
+  <section class="contact-section">
+    <div class="section-title">Contact</div>
+    <p>Questions? Call or text:</p>
+    <a href="tel:5053121133">(505) 312-1133</a>
+  </section>
+
+  <footer>
+    &copy; <span id="year"></span> NMGrassVB
+  </footer>
+
+  <script>
+    /* ============================================================
+       EDIT TOURNAMENTS HERE
+       To add a new tournament: copy one object below (the part
+       between { and }), paste it into the array, and change the
+       details. Keep the date in "YYYY-MM-DD" format so the
+       auto-hide feature works correctly.
+       ============================================================ */
+    const tournaments = [
+      {
+        name: "4 Player Co-Ed Grass Volleyball Tournament",
+        date: "2026-07-11",          // YYYY-MM-DD — used for auto-hide
+        dateDisplay: "Saturday July 11th, 2026", // how the date shows on the card
+        checkIn: "9:00 AM",
+        location: "Arroyo del Oso Park",
+        format: "4-player co-ed, one girl minimum",
+        price: "$25 per person",
+        prize: "$500 total cash prizes — upper & lower bracket",
+        formLink: "https://docs.google.com/forms/d/e/1FAIpQLSd-SXZK2zdg2mXTTR6OkL7KpqK9MSJlhKPYlSZMLqFEcvS6JQ/viewform"
+      }
+
+      // ---- COPY BELOW THIS LINE TO ADD ANOTHER TOURNAMENT ----
+      // ,{
+      //   name: "Tournament Name Here",
+      //   date: "2026-08-15",
+      //   dateDisplay: "Saturday August 15th, 2026",
+      //   checkIn: "9:00 AM",
+      //   location: "Park Name Here",
+      //   format: "4-player co-ed, one girl minimum",
+      //   price: "$25 per person",
+      //   prize: "$500 total cash prizes",
+      //   formLink: "https://docs.google.com/forms/d/your-form-link/viewform"
+      // }
+    ];
+
+    // ---------- RENDER TOURNAMENTS (auto-hides past dates) ----------
+    function renderTournaments() {
+      const container = document.getElementById("tournament-list");
+      const today = new Date();
+      today.setHours(0, 0, 0, 0);
+
+      const upcoming = tournaments.filter(t => {
+        const tDate = new Date(t.date + "T00:00:00");
+        return tDate >= today;
+      });
+
+      // Sort soonest first
+      upcoming.sort((a, b) => new Date(a.date) - new Date(b.date));
+
+      if (upcoming.length === 0) {
+        container.innerHTML = '<div class="no-tournaments">No upcoming tournaments right now. Check back soon or follow @nmgrassvb for updates.</div>';
+        return;
+      }
+
+      container.innerHTML = upcoming.map(t => `
+        <div class="tournament-card">
+          <h3>${t.name}</h3>
+          <div class="detail-row"><span class="label">Date</span><span class="value">${t.dateDisplay}</span></div>
+          <div class="detail-row"><span class="label">Check-in</span><span class="value">${t.checkIn}</span></div>
+          <div class="detail-row"><span class="label">Location</span><span class="value">${t.location}</span></div>
+          <div class="detail-row"><span class="label">Format</span><span class="value">${t.format}</span></div>
+          <div class="detail-row"><span class="label">Price</span><span class="value">${t.price}</span></div>
+          <div class="detail-row"><span class="label">Prize</span><span class="value">${t.prize}</span></div>
+          <a class="register-btn" href="${t.formLink}" target="_blank">Register Now</a>
+        </div>
+      `).join("");
+    }
+
+    renderTournaments();
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
