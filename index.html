@@ -111,6 +111,52 @@
     margin-bottom: 14px;
   }
 
+  /* ---------- JULY 4TH THEME ---------- */
+  .tournament-card.july4 {
+    background: linear-gradient(135deg, #0a1628 0%, #1a0a0a 100%);
+    border: 2px solid #B22234;
+    box-shadow: 0 0 24px rgba(178,34,52,0.2);
+  }
+
+  .tournament-card.july4:hover {
+    border-color: #B22234;
+    box-shadow: 0 0 36px rgba(178,34,52,0.35);
+    transform: translateY(-2px);
+  }
+
+  .tournament-card.july4 h3 {
+    color: #ffffff;
+  }
+
+  .july4-banner {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(90deg, #B22234, #3C3B6E);
+    border-radius: 8px;
+    padding: 7px 14px;
+    margin-bottom: 16px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #ffffff;
+  }
+
+  .tournament-card.july4 .detail-row {
+    border-bottom-color: rgba(255,255,255,0.08);
+  }
+
+  .tournament-card.july4 .register-btn {
+    background: linear-gradient(90deg, #B22234, #3C3B6E);
+    color: #ffffff;
+    box-shadow: 0 0 0 rgba(178,34,52,0);
+  }
+
+  .tournament-card.july4 .register-btn:hover {
+    box-shadow: 0 0 20px rgba(178,34,52,0.5);
+  }
+
   .tournament-card .detail-row {
     display: flex;
     justify-content: space-between;
@@ -241,12 +287,13 @@
         checkIn: "10:00 AM",
         location: "North Domingo Park",
         format: "2-6 players, coed",
-        price: "$25 per person",
+        price: "$20 per person",
         prize: "Prizes for upper bracket winners",
-        formLink: "#"
+        formLink: "#",
+        theme: "july4"
       },
       {
-        name: "4 Player Co-Ed Grass Volleyball Tournament",
+        name: "4 Player Cash Prize Co-Ed Tournament",
         date: "2026-07-11",          // YYYY-MM-DD — used for auto-hide
         dateDisplay: "Saturday July 11th, 2026", // how the date shows on the card
         checkIn: "9:00 AM",
@@ -291,7 +338,8 @@
       }
 
       container.innerHTML = upcoming.map(t => `
-        <div class="tournament-card">
+        <div class="tournament-card ${t.theme === 'july4' ? 'july4' : ''}">
+          ${t.theme === 'july4' ? '<div class="july4-banner">🇺🇸 4th of July Special</div>' : ''}
           <h3>${t.name}</h3>
           <div class="detail-row"><span class="label">Date</span><span class="value">${t.dateDisplay}</span></div>
           <div class="detail-row"><span class="label">Check-in</span><span class="value">${t.checkIn}</span></div>
