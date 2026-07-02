@@ -288,7 +288,7 @@
         location: "North Domingo Park",
         format: "2-6 players, coed",
         price: "$20 per person",
-        prize: "Prizes for upper bracket winners",
+        prize: "Prizes for winners",
         formLink: "#",
         theme: "july4"
       },
@@ -339,13 +339,13 @@
 
       container.innerHTML = upcoming.map(t => `
         <div class="tournament-card ${t.theme === 'july4' ? 'july4' : ''}">
-          ${t.theme === 'july4' ? '<div class="july4-banner">🇺🇸 4th of July Special</div>' : ''}
-          <h3>${t.name}</h3>
+          <h3>${t.name}${t.theme === 'july4' ? ' 🇺🇸' : ''}</h3>
           <div class="detail-row"><span class="label">Date</span><span class="value">${t.dateDisplay}</span></div>
           <div class="detail-row"><span class="label">Check-in</span><span class="value">${t.checkIn}</span></div>
           <div class="detail-row"><span class="label">Location</span><span class="value">${t.location}</span></div>
           <div class="detail-row"><span class="label">Format</span><span class="value">${t.format}</span></div>
           <div class="detail-row"><span class="label">Price</span><span class="value">${t.price}</span></div>
+          ${t.theme === 'july4' ? '<div class="detail-row"><span class="label">Theme</span><span class="value">🔴⚪🔵 Red, White & Blue</span></div>' : ''}
           <div class="detail-row"><span class="label">Prize</span><span class="value">${t.prize}</span></div>
           <a class="register-btn" href="${t.formLink}" target="_blank">Register Now</a>
         </div>
